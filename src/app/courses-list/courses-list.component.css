@@ -1,0 +1,11 @@
+.course-list{
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+h3{
+    margin: 0 0 0.5rem 0;
+}
