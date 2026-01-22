@@ -8,7 +8,7 @@
   <p>{{ course.description }}</p>
   <p>{{ course.price | currency: "USD" }}</p>
   <p>{{ course.date }}</p>
-  <p [hidden]="!course.soldOut">Sold Out</p>
+  <p class="sold-out" [hidden]="!course.soldOut">Sold Out</p>
 
   @if (course.soldOut === false) {
     <div class="on-sale">On Sale</div>
@@ -17,7 +17,7 @@
     <div class="special-offer">Special Offer!!!</div>
   }
   <br />
-  <button type="button" (click)="viewDetails(course.title)">
-    View details
+  <button [disabled]="course.soldOut" type="button" (click)="onBookCourse()">
+    Book Course
   </button>
 </div>

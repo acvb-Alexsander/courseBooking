@@ -43,4 +43,8 @@ export class CoursesListComponent {
   ngOnInit(): void {
     console.log('Courses list');
   }
+
+  onCourseBooked(course: any): void {
+    console.log('Parent heard about booking: ', course.title);
+  }
 }
