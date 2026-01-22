@@ -9,6 +9,7 @@ import { CourseCardComponent } from '../course-card/course-card.component';
   styleUrl: './courses-list.component.css',
 })
 export class CoursesListComponent {
+  courseList = new Array<any>();
   title = 'Available Courses';
   courses = [
     {
@@ -46,5 +47,10 @@ export class CoursesListComponent {
 
   onCourseBooked(course: any): void {
     console.log('Parent heard about booking: ', course.title);
+  }
+
+  addToWishList(course: any): void {
+    console.log('add to wish list: ', course.title);
+    this.courseList.push(course);
   }
 }
