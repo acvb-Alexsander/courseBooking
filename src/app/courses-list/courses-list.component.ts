@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { NgStyle } from '@angular/common';
+import { CurrencyPipe, DatePipe, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-courses-list',
-  imports: [NgStyle],
+  imports: [NgStyle, DatePipe, CurrencyPipe],
   templateUrl: './courses-list.component.html',
   styleUrl: './courses-list.component.css',
 })
@@ -15,6 +15,7 @@ export class CoursesListComponent {
       title: 'Angular Basics',
       description: 'learn the basics of Angular',
       price: 49,
+      date: '15-08-2024',
       soldOut: false,
       img: 'angular-logo.png',
     },
@@ -23,6 +24,7 @@ export class CoursesListComponent {
       title: 'Advanced Angular',
       description: 'Deep dive into Angular internals',
       price: 99,
+      date: '21-01-2026',
       soldOut: false,
       img: 'angular-logo.png',
     },
@@ -31,6 +33,7 @@ export class CoursesListComponent {
       title: 'RxJS in Depth',
       description: 'Become A fullstack Developer',
       price: 149,
+      date: '08-11-2026',
       soldOut: true,
       img: 'angular-logo.png',
     },

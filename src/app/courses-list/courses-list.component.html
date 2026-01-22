@@ -4,8 +4,8 @@
   <div class="courses-item">
     <h3>{{ course.title }}</h3>
     <p>{{ course.description }}</p>
-    <p>{{ course.price }}</p>
-    <p>21-01-2026</p>
+    <p>{{ course.price | currency: "USD" }}</p>
+    <p>{{ course.date }}</p>
     <p [hidden]="!course.soldOut">Sold Out</p>
     <img
       [ngStyle]="{ border: course.soldOut ? '2px solid red' : 'none' }"
