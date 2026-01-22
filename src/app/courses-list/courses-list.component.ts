@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { CurrencyPipe, DatePipe, NgStyle } from '@angular/common';
+import { CourseCardComponent } from '../course-card/course-card.component';
 
 @Component({
   selector: 'app-courses-list',
-  imports: [NgStyle, DatePipe, CurrencyPipe],
+  imports: [NgStyle, DatePipe, CurrencyPipe, CourseCardComponent],
   templateUrl: './courses-list.component.html',
   styleUrl: './courses-list.component.css',
 })
@@ -41,9 +42,5 @@ export class CoursesListComponent {
 
   ngOnInit(): void {
     console.log('Courses list');
-  }
-
-  viewDetails(title: string): void {
-    alert(`${title} details will be available soon!`);
   }
 }
