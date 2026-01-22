@@ -8,7 +8,9 @@
   <p [hidden]="!courses[0].soldOut">Sold Out</p>
   <img [src]="courses[0].img" [alt]="courses[0].title" />
   <br />
-  <button type="button">View details</button>
+  <button type="button" (click)="viewDetails(courses[0].title)">
+    View details
+  </button>
 </div>
 
 <div class="courses-item">
@@ -19,7 +21,9 @@
   <p [hidden]="!courses[1].soldOut">Sold Out</p>
   <img [src]="courses[1].img" [alt]="courses[1].title" />
   <br />
-  <button type="button">View details</button>
+  <button type="button" (click)="viewDetails(courses[1].title)">
+    View details
+  </button>
 </div>
 
 <div class="courses-item">
@@ -28,5 +32,7 @@
   <p>{{ courses[2].price }}</p>
   <p>21-01-2026</p>
   <p [hidden]="!courses[2].soldOut">Sold Out</p>
-  <button type="button">View details</button>
+  <button type="button" (click)="viewDetails(courses[2].title)">
+    View details
+  </button>
 </div>
