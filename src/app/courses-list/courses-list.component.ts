@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-courses-list',
-  imports: [],
+  imports: [NgStyle],
   templateUrl: './courses-list.component.html',
   styleUrl: './courses-list.component.css',
 })
@@ -31,6 +32,7 @@ export class CoursesListComponent {
       description: 'Become A fullstack Developer',
       price: 149,
       soldOut: true,
+      img: 'angular-logo.png',
     },
   ];
 

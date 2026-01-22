@@ -6,7 +6,11 @@
   <p>{{ courses[0].price }}</p>
   <p>21-01-2026</p>
   <p [hidden]="!courses[0].soldOut">Sold Out</p>
-  <img [src]="courses[0].img" [alt]="courses[0].title" />
+  <img
+    [ngStyle]="{ border: courses[0].soldOut ? '2px solid red' : 'none' }"
+    [src]="courses[0].img"
+    [alt]="courses[0].title"
+  />
   <br />
   <button type="button" (click)="viewDetails(courses[0].title)">
     View details
@@ -19,7 +23,11 @@
   <p>{{ courses[1].price }}</p>
   <p>21-01-2026</p>
   <p [hidden]="!courses[1].soldOut">Sold Out</p>
-  <img [src]="courses[1].img" [alt]="courses[1].title" />
+  <img
+    [ngStyle]="{ border: courses[0].soldOut ? '2px solid red' : 'none' }"
+    [src]="courses[1].img"
+    [alt]="courses[1].title"
+  />
   <br />
   <button type="button" (click)="viewDetails(courses[1].title)">
     View details
@@ -32,6 +40,12 @@
   <p>{{ courses[2].price }}</p>
   <p>21-01-2026</p>
   <p [hidden]="!courses[2].soldOut">Sold Out</p>
+  <img
+    [ngStyle]="{ border: courses[2].soldOut ? '2px solid red' : 'none' }"
+    [src]="courses[2].img"
+    [alt]="courses[2].title"
+  />
+  <br />
   <button type="button" (click)="viewDetails(courses[2].title)">
     View details
   </button>
