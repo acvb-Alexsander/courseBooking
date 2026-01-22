@@ -5,6 +5,9 @@
   <p>{{ courses[0].description }}</p>
   <p>{{ courses[0].price }}</p>
   <p>21-01-2026</p>
+  <p [hidden]="!courses[0].soldOut">Sold Out</p>
+  <img [src]="courses[0].img" [alt]="courses[0].title" />
+  <br />
   <button type="button">View details</button>
 </div>
 
@@ -13,6 +16,9 @@
   <p>{{ courses[1].description }}</p>
   <p>{{ courses[1].price }}</p>
   <p>21-01-2026</p>
+  <p [hidden]="!courses[1].soldOut">Sold Out</p>
+  <img [src]="courses[1].img" [alt]="courses[1].title" />
+  <br />
   <button type="button">View details</button>
 </div>
 
@@ -21,5 +27,6 @@
   <p>{{ courses[2].description }}</p>
   <p>{{ courses[2].price }}</p>
   <p>21-01-2026</p>
+  <p [hidden]="!courses[2].soldOut">Sold Out</p>
   <button type="button">View details</button>
 </div>
