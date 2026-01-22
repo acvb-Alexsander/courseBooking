@@ -33,4 +33,8 @@ export class CoursesListComponent {
       soldOut: true,
     },
   ];
+
+  viewDetails(title: string): void {
+    alert(`${title} details will be available soon!`);
+  }
 }
