@@ -36,6 +36,10 @@ export class CoursesListComponent {
     },
   ];
 
+  ngOnInit(): void {
+    console.log('Courses list');
+  }
+
   viewDetails(title: string): void {
     alert(`${title} details will be available soon!`);
   }

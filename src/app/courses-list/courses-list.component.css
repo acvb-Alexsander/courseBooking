@@ -22,3 +22,8 @@ button{
 button:hover{
     background-color: #0056b3;
 }
+
+.special-offer {
+   color: #007e24;
+   font-weight: bold;
+}
