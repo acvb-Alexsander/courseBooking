@@ -23,6 +23,15 @@ button:hover{
     background-color: #0056b3;
 }
 
+button:disabled{
+    background-color: #7b8186;
+}
+
+.sold-out{
+    color: #b00600;
+    font-weight: bold;
+}
+
 .special-offer {
    color: #007e24;
    font-weight: bold;
