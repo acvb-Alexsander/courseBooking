@@ -1,7 +1,16 @@
 <h2>{{ title }}</h2>
+@if (courseList.length > 0) {
+  <h3>Your Wish List:</h3>
+  <ul>
+    @for (wishCourse of courseList; track wishCourse.id) {
+      <li>{{ wishCourse.title }} - {{ wishCourse.price | currency: "USD" }}</li>
+    }
+  </ul>
+}
 @for (course of courses; track course.id) {
   <app-course-card
     [course]="course"
     (courseBooked)="onCourseBooked($event)"
+    (wishListed)="addToWishList($event)"
   ></app-course-card>
 }
