@@ -1,6 +1,7 @@
 import { NgStyle, CurrencyPipe } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Course } from '../models/course.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-course-card',
@@ -12,6 +13,8 @@ export class CourseCardComponent {
   @Input() course?: Course;
   @Output() courseBooked = new EventEmitter<any>();
   @Output() wishListed = new EventEmitter<any>();
+
+  constructor(private router: Router) {}
 
   onBookCourse() {
     this.courseBooked.emit(this.course);
@@ -26,5 +29,9 @@ export class CourseCardComponent {
       return this.course.price;
     }
     return null;
+  }
+
+  goToDetails(courseId: number | undefined): void {
+    this.router.navigate(['/courses', courseId]);
   }
 }
