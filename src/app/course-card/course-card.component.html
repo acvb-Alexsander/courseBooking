@@ -13,7 +13,9 @@
   @if (course?.soldOut === false) {
     <div class="on-sale">On Sale</div>
   }
-
+  @if (specialOfferPrice()) {
+    <div class="special-offer">Special Offer</div>
+  }
   <br />
   <button type="button" (click)="addToWishList()">Add to Wish List</button>
   <button [disabled]="course?.soldOut" type="button" (click)="onBookCourse()">

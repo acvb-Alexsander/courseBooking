@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { CurrencyPipe, DatePipe, NgStyle } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 import { CourseCardComponent } from '../course-card/course-card.component';
 import { Course } from '../models/course.model';
 import { CourseService } from '../services/course.service';
 
 @Component({
   selector: 'app-courses-list',
-  imports: [NgStyle, DatePipe, CurrencyPipe, CourseCardComponent],
+  imports: [CurrencyPipe, CourseCardComponent],
   templateUrl: './courses-list.component.html',
   styleUrl: './courses-list.component.css',
 })

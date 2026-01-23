@@ -1,10 +1,10 @@
-import { NgStyle, DatePipe, CurrencyPipe } from '@angular/common';
+import { NgStyle, CurrencyPipe } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Course } from '../models/course.model';
 
 @Component({
   selector: 'app-course-card',
-  imports: [NgStyle, DatePipe, CurrencyPipe],
+  imports: [NgStyle, CurrencyPipe],
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css',
 })
@@ -19,5 +19,12 @@ export class CourseCardComponent {
 
   addToWishList() {
     this.wishListed.emit(this.course);
+  }
+
+  specialOfferPrice(): number | null {
+    if (this.course && this.course.price < 50) {
+      return this.course.price;
+    }
+    return null;
   }
 }
