@@ -40,9 +40,14 @@ export class CourseService {
 
   private baseUrl = 'http://localhost:3000';
   constructor(private http: HttpClient) {}
+
   //Get all courses
-  getCourses(): Observable<Course[]> {
-    return this.http.get<Course[]>(`${this.baseUrl}/courses`);
+  getCourses(description?: string | null): Observable<Course[]> {
+    let url = `${this.baseUrl}/courses`;
+    if (description) {
+      url += `?description=${description}`;
+    }
+    return this.http.get<Course[]>(url);
   }
 
   getCourseById(id: number): Observable<Course> {

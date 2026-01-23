@@ -17,6 +17,7 @@
     <div class="special-offer">Special Offer</div>
   }
   <br />
+  <button (click)="goToDetails(course?.id)">See Details</button>
   <button type="button" (click)="addToWishList()">Add to Wish List</button>
   <button [disabled]="course?.soldOut" type="button" (click)="onBookCourse()">
     Book Course

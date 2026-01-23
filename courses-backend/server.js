@@ -30,7 +30,15 @@ function saveData(data) {
 // Get all courses
 app.get("/courses", (req, res) => {
   const data = loadData();
-  res.json(data.courses);
+  let courses = data.courses;
+  // Filter by description if query param is provided
+  const descriptionFilter = req.query.description;
+  if (descriptionFilter) {
+    courses = courses.filter((c) =>
+      c.description.toLowerCase().includes(descriptionFilter.toLowerCase()),
+    );
+  }
+  res.json(courses);
 });
 
 // Get a course by ID
