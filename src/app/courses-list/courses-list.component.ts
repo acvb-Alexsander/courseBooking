@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CurrencyPipe, DatePipe, NgStyle } from '@angular/common';
 import { CourseCardComponent } from '../course-card/course-card.component';
+import { Course } from '../models/course.model';
+import { CourseService } from '../services/course.service';
 
 @Component({
   selector: 'app-courses-list',
@@ -9,47 +11,28 @@ import { CourseCardComponent } from '../course-card/course-card.component';
   styleUrl: './courses-list.component.css',
 })
 export class CoursesListComponent {
-  courseList = new Array<any>();
+  courseList: Course[] = [];
+  courses: Course[] = [];
   title = 'Available Courses';
-  courses = [
-    {
-      id: 1,
-      title: 'Angular Basics',
-      description: 'learn the basics of Angular',
-      price: 49,
-      date: '15-08-2024',
-      soldOut: false,
-      img: 'angular-logo.png',
-    },
-    {
-      id: 2,
-      title: 'Advanced Angular',
-      description: 'Deep dive into Angular internals',
-      price: 99,
-      date: '21-01-2026',
-      soldOut: false,
-      img: 'angular-logo.png',
-    },
-    {
-      id: 3,
-      title: 'RxJS in Depth',
-      description: 'Become A fullstack Developer',
-      price: 149,
-      date: '08-11-2026',
-      soldOut: true,
-      img: 'angular-logo.png',
-    },
-  ];
+
+  constructor(private courseService: CourseService) {}
 
   ngOnInit(): void {
-    console.log('Courses list');
+    this.courseService.getCourses().subscribe({
+      next: (data: Course[]) => {
+        this.courses = data;
+      },
+      error: (err) => {
+        console.log('Error feaching courses:', err);
+      },
+    });
   }
 
-  onCourseBooked(course: any): void {
+  onCourseBooked(course: Course): void {
     console.log('Parent heard about booking: ', course.title);
   }
 
-  addToWishList(course: any): void {
+  addToWishList(course: Course): void {
     console.log('add to wish list: ', course.title);
     this.courseList.push(course);
   }
