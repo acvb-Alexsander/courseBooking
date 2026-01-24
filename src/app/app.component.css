@@ -23,3 +23,10 @@ nav a.active{
     background-color: #0072b1;
     color: white;
 }
+
+.sign-up{
+    text-align: right;
+    margin-left: auto;
+    background-color: #28a745;
+    color: white;
+}
