@@ -1,33 +1,52 @@
 {
-    "courses": [
-        {
-            "id": 1,
-            "title": "Intro to Angular",
-            "description": "Learn Angular basics",
-            "price": 49,
-            "date": "2025-03-01",
-            "img": "angular-logo.png",
-            "soldOut": false
-        },
-        {
-            "id": 2,
-            "title": "Advanced Angular",
-            "description": "Deep dive into Angular",
-            "price": 99,
-            "date": "2025-04-10",
-            "img": "angular-logo.png",
-            "soldOut": true
-        },
-        {
-            "id": 3,
-            "title": "RxJS Fundamentals",
-            "description": "Asynchronous data streams",
-            "price": 45,
-            "onSale": true,
-            "date": "2025-05-05",
-            "img": "angular-logo.png",
-            "soldOut": false
-        }
-    ],
-    "students": []
+  "courses": [
+    {
+      "id": 1,
+      "title": "Intro to Angular",
+      "description": "Learn Angular basics",
+      "price": 49,
+      "date": "2025-03-01",
+      "img": "angular-logo.png",
+      "soldOut": false
+    },
+    {
+      "id": 2,
+      "title": "Advanced Angular",
+      "description": "Deep dive into Angular",
+      "price": 99,
+      "date": "2025-04-10",
+      "img": "angular-logo.png",
+      "soldOut": true
+    },
+    {
+      "id": 3,
+      "title": "RxJS Fundamentals",
+      "description": "Asynchronous data streams",
+      "price": 45,
+      "onSale": true,
+      "date": "2025-05-05",
+      "img": "angular-logo.png",
+      "soldOut": false
+    }
+  ],
+  "students": [
+    {
+      "id": 1769365857593,
+      "name": "Alexsander Campos Vilas Boas",
+      "email": "alexsander@gmail.com",
+      "enrolledCourseId": [
+        "2"
+      ],
+      "enrolledCourses": []
+    },
+    {
+      "id": 1769366085862,
+      "name": "testetesteteste",
+      "email": "testeAlpha@hotmail.com",
+      "enrolledCourseId": [
+        "3"
+      ],
+      "enrolledCourses": []
+    }
+  ]
 }
