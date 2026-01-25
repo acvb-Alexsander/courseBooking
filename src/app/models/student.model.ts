@@ -2,7 +2,7 @@ export interface Student {
   id: number;
   name: string;
   email?: string;
-  enrolledCourses?: number[];
+  enrolledCourseId?: number[];
   registrationDate?: string;
   phoneNumber?: string;
 }
