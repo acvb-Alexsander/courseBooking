@@ -30,7 +30,7 @@ export class CourseDetailsComponent implements OnInit {
   }
 
   loadCourseById(id: number): void {
-    this.courseService.getCourseById(id).subscribe({
+    this.courseService.getCourseById().subscribe({
       next: (data: Course) => {
         this.course = data;
       },
