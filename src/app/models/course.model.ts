@@ -4,6 +4,7 @@ export interface Course {
   description: string;
   price: number;
   date?: string;
-  soldOut: boolean;
+  soldOut?: boolean;
   img?: string;
+  onSale: boolean;
 }

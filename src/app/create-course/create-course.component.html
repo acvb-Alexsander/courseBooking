@@ -1,0 +1,98 @@
+<h2>Add new course</h2>
+
+<form [formGroup]="createCourseForm" (submit)="onSubmit()">
+  <div class="form-group">
+    <label for="title">Title: </label>
+    <input type="text" id="title" formControlName="title" />
+    @if (title?.invalid && (title?.touched || title?.dirty)) {
+      <div class="error">
+        @if (title?.errors?.["required"]) {
+          <small>Title is required</small>
+        }
+        @if (title?.errors?.["minlength"]) {
+          <small>Title must be at least 3 characters long</small>
+        }
+      </div>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description: </label>
+    <textarea id="description" formControlName="description"></textarea>
+    @if (description?.invalid && (description?.touched || description?.dirty)) {
+      <div class="error">
+        @if (description?.errors?.["required"]) {
+          <small>Description is required</small>
+        }
+        @if (description?.errors?.["minlength"]) {
+          <small>Description must be at least 10 characters long</small>
+        }
+      </div>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="price">Price ($): </label>
+    <input type="text" id="price" formControlName="price" />
+    @if (price?.invalid && (price?.touched || price?.dirty)) {
+      <div class="error">
+        @if (price?.errors?.["required"]) {
+          <small>Price is required</small>
+        }
+        @if (price?.errors?.["pattern"]) {
+          <small>Price must be a valid number</small>
+        }
+      </div>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="date">Course Date: </label>
+    <input type="date" id="date" formControlName="date" />
+    @if (date?.invalid && (date?.touched || date?.dirty)) {
+      <div class="error">
+        @if (date?.errors?.["required"]) {
+          <small>Course date is required</small>
+        }
+      </div>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="img">Image URL: </label>
+    <input type="text" id="img" formControlName="img" />
+    @if (img?.invalid && (img?.touched || img?.dirty)) {
+      <div class="error">
+        @if (img?.errors?.["required"]) {
+          <small>Image URL is required</small>
+        }
+      </div>
+    }
+  </div>
+
+  <div class="form-group checkbox-group">
+    <label for="onSale">On Sale: </label>
+    <input type="checkbox" id="onSale" formControlName="onSale" />
+    @if (onSale?.invalid && (onSale?.touched || onSale?.dirty)) {
+      <div class="error">
+        @if (onSale?.errors?.["required"]) {
+          <small>On Sale is required</small>
+        }
+      </div>
+    }
+  </div>
+
+  <button type="submit" [disabled]="createCourseForm.invalid">
+    Add Course
+  </button>
+
+  @if (submissonSucessful) {
+    <p class="success-message">Course created successfully!</p>
+  }
+
+  @if (submissionError) {
+    <p class="error-message">
+      An error occurred while creating the course. Please try again.
+    </p>
+  }
+</form>
