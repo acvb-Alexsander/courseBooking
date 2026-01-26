@@ -1,0 +1,20 @@
+<h2>{{ title }}</h2>
+@if (courseList.length > 0) {
+  <div class="wish-list">
+    My Wish List:
+
+    @for (wishCourse of courseList; track wishCourse.id) {
+      <span class="wishlist-item">{{ wishCourse.title }}</span>
+      <span class="wishlist-item">{{
+        wishCourse.price | currency: "USD"
+      }}</span>
+    }
+  </div>
+}
+@for (course of courses; track course.id) {
+  <app-course-card
+    [course]="course"
+    (courseBooked)="onCourseBooked($event)"
+    (wishListed)="addToWishList($event)"
+  ></app-course-card>
+}

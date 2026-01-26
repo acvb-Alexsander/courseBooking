@@ -1,0 +1,25 @@
+<div class="courses-card">
+  <img
+    [ngStyle]="{ border: course?.soldOut ? '2px solid red' : 'none' }"
+    [src]="course?.img"
+    [alt]="course?.title"
+  />
+  <h3>{{ course?.title }}</h3>
+  <p>{{ course?.description }}</p>
+  <p>{{ course?.price | currency: "USD" }}</p>
+  <p>{{ course?.date }}</p>
+  <p class="sold-out" [hidden]="!course?.soldOut">Sold Out</p>
+
+  @if (course?.soldOut === false) {
+    <div class="on-sale">On Sale</div>
+  }
+  @if (specialOfferPrice()) {
+    <div class="special-offer">Special Offer</div>
+  }
+  <br />
+  <button (click)="goToDetails(course?.id)">See Details</button>
+  <button type="button" (click)="addToWishList()">Add to Wish List</button>
+  <button [disabled]="course?.soldOut" type="button" (click)="onBookCourse()">
+    Book Course
+  </button>
+</div>
