@@ -1,4 +1,4 @@
-import { CommonModule, CurrencyPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
@@ -6,8 +6,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { CourseService } from '../services/course.service';
-import { Course } from '../models/course.model';
+import { CourseService } from '../../../services/course.service';
+import { Course } from '../../../models/course.model';
 
 @Component({
   selector: 'app-create-course',
