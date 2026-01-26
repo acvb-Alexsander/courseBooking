@@ -24,9 +24,13 @@ nav a.active{
     color: white;
 }
 
-.sign-up{
+nav .sign-up{
     text-align: right;
     margin-left: auto;
     background-color: #28a745;
     color: white;
+}
+
+nav .sign-up:hover{
+    background-color: #218838;
 }

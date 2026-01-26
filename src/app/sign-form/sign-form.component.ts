@@ -68,7 +68,7 @@ export class SignFormComponent implements OnInit {
       id: 0,
       name: this.signUpForm.value.name,
       email: this.signUpForm.value.email,
-      enrolledCourseId: [this.signUpForm.value.enrolledCourseId],
+      enrolledCourseId: this.signUpForm.value.enrolledCourseId,
     };
 
     this.courseService.addStudent(newStudent).subscribe({

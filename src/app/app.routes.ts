@@ -3,6 +3,7 @@ import { CoursesListComponent } from './courses-list/courses-list.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { CourseAboutComponent } from './course-about/course-about.component';
 import { SignFormComponent } from './sign-form/sign-form.component';
+import { CreateCourseComponent } from './create-course/create-course.component';
 
 export const routes: Routes = [
   //Out twi main routes:
@@ -11,4 +12,5 @@ export const routes: Routes = [
   { path: 'courses/:id', component: CourseDetailsComponent },
   { path: 'about', component: CourseAboutComponent },
   { path: 'sign-up', component: SignFormComponent },
+  { path: 'create-course', component: CreateCourseComponent },
 ];
