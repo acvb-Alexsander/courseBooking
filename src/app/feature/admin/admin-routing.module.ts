@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       { path: 'create-course', component: CreateCourseComponent },
       { path: 'students', component: StudentListComponent },
-      { path: '', redirectTo: 'new-course', pathMatch: 'full' },
+      { path: '', redirectTo: 'create-course', pathMatch: 'full' },
     ],
   },
 ];
