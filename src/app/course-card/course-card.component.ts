@@ -18,6 +18,7 @@ export class CourseCardComponent {
 
   onBookCourse() {
     this.courseBooked.emit(this.course);
+    return alert('Course booked successfully!');
   }
 
   addToWishList() {
