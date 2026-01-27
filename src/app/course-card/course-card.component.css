@@ -26,6 +26,7 @@ button:hover{
 
 button:disabled{
     background-color: #7b8186;
+    cursor: not-allowed;
 }
 
 .sold-out{
