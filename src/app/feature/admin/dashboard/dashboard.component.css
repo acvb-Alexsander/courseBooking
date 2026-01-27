@@ -1,0 +1,20 @@
+nav{
+    margin-bottom: 1rem;
+}
+
+nav a{
+    margin-right: 1rem;
+    text-decoration: none;
+    color: #0072b1;
+    font-weight: 500;
+
+}
+
+nav a.active {
+    text-decoration: underline;
+}
+
+nav a:hover {
+    color: #005f8d;
+    text-decoration: underline;
+}
